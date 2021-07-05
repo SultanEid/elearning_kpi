@@ -7,50 +7,121 @@
 <div class="text-center">
     <h1 class="display-4">The following is the most common KPIs for the E-Learning Deanship at the University of Taibah</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-     <p>
+    
+    <section>
+        <div width="33%" height="45%">
+
+            <canvas id="myChart"></canvas>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.4.0/chart.min.js"></script>
+            <script src="script.js"></script>
+
+            <script>
+                var ctx = document.getElementById("myChart");
+
+                var stars = [50.25, 49.75];
+                var frameworks = ["النساء ", "الرجال "];
+
+                var myChart = new Chart(ctx, {
+                    type: "pie",
+                    data: {
+                        labels: frameworks,
+                        datasets: [
+                            {
+                                label: "Github Stars",
+                                data: stars,
+                                backgroundColor: [
+                                    "rgba(255, 99, 132, 0.2)",
+                                    "rgba(153, 102, 255, 0.2)"
+                                ],
+                                borderColor: [
+                                    "rgba(255, 99, 132, 1)",
+                                    "rgba(153, 102, 255, 1)",
+                                ],
+                                borderWidth: 1
+                            }
+                        ]
+                    }
+                });
+
+            </script>
+        </div>
+    </section>
 
 
-        <canvas id="myChart" width="150" height="100"></canvas>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.4.0/chart.min.js"></script>
-        <script src="script.js"></script>
+    <section>
+        <div width="33%" height="45%">
+            <canvas id="line-chart" width="800" height="450"></canvas>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.4.0/chart.min.js"></script>
+            <script src="script.js"></script>
+            <script>
+                new Chart(document.getElementById("line-chart"), {
+                    type: 'line',
+                    data: {
+                        labels: ["الأحد", "الأثنين ", "الثلاثاء ", "الاربعاء ", "الخميس"],
+                        datasets: [{
+                            data: [447, 411, 374, 270, 67],
+                            label: "المحاضرات المنشأة",
+                            borderColor: "#3e95cd",
+                            fill: false
+                        }, {
+                            data: [207, 165, 180, 114, 88],
+                            label: "المحاضرات المتزامنة ",
+                            borderColor: "#8e5ea2",
+                            fill: false
+                        }, {
+                            data: [18.990, 16.583, 16.269, 11.060, 3.628],
+                            label: "الحاضرون بالتكرار ",
+                            borderColor: "#3cba9f",
+                            fill: false
+                        }, {
+                            data: [13.393, 11.315, 11.962, 8.229, 3.122],
+                            label: "الحاضرون بلا تكرار",
+                            borderColor: "#e8c3b9",
+                            fill: false
+                        }
+                        ]
+                    },
+                    options: {
+                        title: {
+                            display: true,
+                            text: 'World population per region (in millions)'
+                        }
+                    }
+                });
+            </script>
+        </div>
 
-     <script>
-         var ctx = document.getElementById("myChart");
+    </section>
+    <section>
+        <div width="33%" height="45%">
 
-         var stars = [135850, 52122, 148825, 16939, 9763];
-         var frameworks = ["React", "Angular", "Vue", "Hyperapp", "Omi"];
+            <<canvas id="doughnut-chart" width="800" height="450"></canvas>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.4.0/chart.min.js"></script>
+            <script src="script.js"></script>
+            <script>
+                new Chart(document.getElementById("doughnut-chart"), {
+                    type: 'doughnut',
+                    data: {
+                        labels: ["العربية", "الانجليزية "],
+                        datasets: [
+                            {
+                                label: "Population (millions)",
+                                backgroundColor: ["#3e95cd", "#3cba9f"],
+                                data: [23, 77]
+                            }
+                        ]
+                    },
+                    options: {
+                        title: {
+                            display: true,
+                            text: 'Predicted world population (millions) in 2050'
+                        }
+                    }
+                });
+            </script>
 
-         var myChart = new Chart(ctx, {
-             type: "pie",
-             data: {
-                 labels: frameworks,
-                 datasets: [
-                     {
-                         label: "Github Stars",
-                         data: stars,
-                         backgroundColor: [
-                             "rgba(255, 99, 132, 0.2)",
-                             "rgba(54, 162, 235, 0.2)",
-                             "rgba(255, 206, 86, 0.2)",
-                             "rgba(75, 192, 192, 0.2)",
-                             "rgba(153, 102, 255, 0.2)"
-                         ],
-                         borderColor: [
-                             "rgba(255, 99, 132, 1)",
-                             "rgba(54, 162, 235, 1)",
-                             "rgba(255, 206, 86, 1)",
-                             "rgba(75, 192, 192, 1)",
-                             "rgba(153, 102, 255, 1)",
-                         ],
-                         borderWidth: 1
-                     }
-                 ]
-             }
-         });
-           
-        </script>
-    </p>
-        
+        </div>
+    </section>
 
 
 
